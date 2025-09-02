@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Hotels</title>
+    <link rel="stylesheet" href="../static/allHotels.css">
+</head>
+<body>
+    <header>
+    Hii... Priydev Mishra, Your Hotels List is Here 🏨
+  </header>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search by hotel name or location...">
+    <button>🔍 Search</button>
+  </div>
+
+  <div class="hotel-list">
+
+    <!-- Hotel 1 -->
+    <div class="hotel-card" th:each="hotel : ${listOfHotels}">
+      <img th:src="@{'/hotel/photo/'+ ${hotel.id}}" alt="Hotel Image">
+      <div class="hotel-info">
+        <h2 th:text="${hotel.hotelName}"></h2>
+        <p><strong>Speciality:</strong><span th:text="${hotel.speciality}"></span></p>
+        <p><strong>Rating:</strong> <span class="stars" th:text="${hotel.rating}"></span></p>
+        <p><strong>Location:</strong> <span th:text="${hotel.city}"></span>, Rajasthan</p>
+        <p><strong>Type:</strong> Luxury</p>
+        <span class="badge">Top Pick</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #f9fafc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0d1b2a;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #f4a261;
+    }
+
+    /* Hero Section */
+    .hero {
+      /* background: url(' + @{/hotel/photo/{id}(id=${hotel.id})} + ') center/cover no-repeat; */
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 10px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    }
+
+    .search-box {
+      background: rgba(255,255,255,0.9);
+      padding: 1rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 0.5rem;
+      max-width: 600px;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .search-box button {
+      background: #f4a261;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .search-box button:hover {
+      background: #e76f51;
+    }
+
+    /* Hotels Section */
+    .hotels {
+      padding: 3rem 5%;
+      background: #fff;
+    }
+
+    .hotels h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #0d1b2a;
+    }
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .hotel-card {
+      background: #f9fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hotel-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .hotel-card .content {
+      padding: 1rem;
+    }
+
+    .hotel-card h3 {
+      margin-bottom: 0.5rem;
+      color: #0d1b2a;
+    }
+
+    .hotel-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .hotel-card button {
+      background: #0d1b2a;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hotel-card button:hover {
+      background: #f4a261;
+    }
+
+    /* Footer */
+    footer {
+      background: #0d1b2a;
+      color: #fff;
+      padding: 2rem 5%;
+      text-align: center;
+    }
+
+    footer .links {
+      margin-bottom: 1rem;
+    }
+
+    footer .links a {
+      color: #f4a261;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      color: #ddd;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .search-box {
+        flex-direction: column;
+      }
+      .search-box button {
+        width: 100%;
+      }
+    }

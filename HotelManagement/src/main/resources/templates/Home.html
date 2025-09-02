@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/home.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>ZipStay</h1>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Book Hotel</a></li>
+      <li><a href="/allHotels">See Hotels</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="background: url('/hotel/photo/403') center/cover no-repeat;">
+    <h2>Find Your Perfect Stay</h2>
+    <div class="search-box">
+      <input type="text" placeholder="Enter city, hotel or destination">
+      <button>Search</button>
+    </div>
+  </section>
+
+  <!-- Hotels Section -->
+  <section class="hotels">
+    <h2>Premium Hotels</h2>
+    <div class="hotel-grid">
+      <div class="hotel-card" th:each="hotel : ${hotels}">
+        <img th:if="${hotel.photo != null}" 
+     th:src="@{'/hotel/photo/' + ${hotel.id}}" 
+     alt="Hotel Image">
+
+    <img th:if="${hotel.photo == null}" 
+     src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" 
+     alt="Default Hotel Image">
+        <div class="content">
+          <h3 th:text="${hotel.hotelName}">Hotel Name</h3>
+            <p th:text="${hotel.hotelSpeciality}">Hotel Description</p>
+          <button>See Hotel</button>
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="links">
+      <a href="#">About</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+    <p>&copy; 2025 ZipStay. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
