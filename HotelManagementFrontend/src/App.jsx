@@ -31,6 +31,7 @@ hover:after:w-full" to="/hotel/createHotel">Create Hotel</Link>
 
     <Routes>
         <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/seeHotels" element={<SeeHotels/>} />
         <Route path="/hotel/createHotel" element={<HotelDetails/>} />
         {/* <Route path="/contact" /> */}
